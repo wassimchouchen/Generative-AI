@@ -1,0 +1,42 @@
+"""Dplatform URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+# from My_plat.views import AuthViewSet
+from My_plat import views, exe, log_sign,UserView
+# from My_plat.log_sign import  
+
+# from django.urls import include
+# from rest_framework import routers
+
+# router = routers.DefaultRouter()
+# router.register(r'auth', AuthViewSet, basename='auth')
+
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('auth/login', log_sign.loginn),
+    path('auth/register', log_sign.register),
+    path('auth/user',  UserView.as_view()),
+    path('turbo', exe.GPT_turbo),    
+    path('translator', exe.Translation),     
+ 
+    path('Summary', exe.summarizer_function),
+    path('text_gen', exe.text_generation_function),
+    path('Text_to_Image', exe.generate_image),
+    path("transcriptionn",exe.transcribe_view),
+]
