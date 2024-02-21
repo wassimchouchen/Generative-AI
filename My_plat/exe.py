@@ -4,8 +4,7 @@ from django.http import HttpResponse, JsonResponse
 import json, requests
 from My_plat import apiii
 import time  
-API_KEY = "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"
-headers = {"Authorization": "Bearer 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"}
+
 
 
 
@@ -29,8 +28,7 @@ def transcribe_view(request):
     return JsonResponse({'error': 'Invalid request method'})
 
 
-api="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"
-api9dim="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"
+
 API_URL = "https://api.openai.com/v1/images/generations"
 @csrf_exempt 
 def generate_image(request):
