@@ -28,5 +28,4 @@
 # from .apiii import * 
 # from django.contrib.auth import authenticate
 
-# headers = {"Authorization": "Bearer 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"}
 
