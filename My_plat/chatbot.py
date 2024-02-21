@@ -6,9 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 autotext_url = "https://api-inference.huggingface.co/models/espnet/kan-bayashi_ljspeech_vits"
-headers = {"Authorization": "Bearer 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"}
 
-OPENAI_API_KEY="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"
 llm=OpenAI(openai_api_key=OPENAI_API_KEY,temperature=0.7)
 
 
